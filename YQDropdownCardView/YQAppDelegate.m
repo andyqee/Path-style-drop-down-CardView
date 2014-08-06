@@ -7,6 +7,7 @@
 //
 
 #import "YQAppDelegate.h"
+#import "YQDemoViewController.h"
 
 @implementation YQAppDelegate
 
@@ -16,6 +17,7 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[YQDemoViewController alloc] init]];
     return YES;
 }
 

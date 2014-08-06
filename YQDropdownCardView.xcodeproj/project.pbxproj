@@ -21,6 +21,7 @@
 		A180AB2619925B5A006268A6 /* YQDropdownCardViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A180AB2519925B5A006268A6 /* YQDropdownCardViewTests.m */; };
 		A180AB3119925BA0006268A6 /* YQCardBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A180AB3019925BA0006268A6 /* YQCardBaseView.m */; };
 		A180AB3419925F54006268A6 /* YQLoginCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = A180AB3319925F54006268A6 /* YQLoginCardView.m */; };
+		A180AB371992767D006268A6 /* YQDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A180AB361992767D006268A6 /* YQDemoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		A180AB3019925BA0006268A6 /* YQCardBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQCardBaseView.m; sourceTree = "<group>"; };
 		A180AB3219925F54006268A6 /* YQLoginCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQLoginCardView.h; sourceTree = "<group>"; };
 		A180AB3319925F54006268A6 /* YQLoginCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQLoginCardView.m; sourceTree = "<group>"; };
+		A180AB351992767D006268A6 /* YQDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQDemoViewController.h; sourceTree = "<group>"; };
+		A180AB361992767D006268A6 /* YQDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQDemoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				A180AB3319925F54006268A6 /* YQLoginCardView.m */,
 				A180AB1219925B5A006268A6 /* Images.xcassets */,
 				A180AB0719925B5A006268A6 /* Supporting Files */,
+				A180AB351992767D006268A6 /* YQDemoViewController.h */,
+				A180AB361992767D006268A6 /* YQDemoViewController.m */,
 			);
 			path = YQDropdownCardView;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A180AB371992767D006268A6 /* YQDemoViewController.m in Sources */,
 				A180AB3419925F54006268A6 /* YQLoginCardView.m in Sources */,
 				A180AB1119925B5A006268A6 /* YQAppDelegate.m in Sources */,
 				A180AB0D19925B5A006268A6 /* main.m in Sources */,

@@ -19,7 +19,7 @@ static const float kCardViewHeight = 245.0;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        self.layer.cornerRadius = 5.0;
     }
     return self;
 }
