@@ -10,7 +10,6 @@
 
 @interface YQCardBaseView : UIControl
 @property (nonatomic) BOOL isOnScreen;
-- (void)showView;
-- (void)dismissView;
+@property (nonatomic, strong) UIView *backImageView;
 
 @end
