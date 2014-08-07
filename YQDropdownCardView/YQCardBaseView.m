@@ -19,8 +19,8 @@ static CGFloat maxRotationAngle = M_PI / 18.0f;
 @property (nonatomic) CGRect originalBounds;
 @property (nonatomic) CGFloat originalPositionX;
 @property (nonatomic) CGFloat originalPositionY;
+@property (nonatomic) CGFloat originalBkViewAlpha;
 @property (nonatomic) BOOL firstGestureAction;
-@property (nonatomic) CGFloat totalAngle;
 
 @end
 
@@ -49,6 +49,7 @@ static CGFloat maxRotationAngle = M_PI / 18.0f;
             self.originalBounds = recognizer.view.bounds;
             self.originalPositionX = CGRectGetMidX(self.originalFrame);
             self.originalPositionY = CGRectGetMidY(self.originalFrame);
+            self.originalBkViewAlpha = self.backImageView.alpha;
             self.firstGestureAction = NO;
         }
         self.initialLocation = location;
@@ -67,9 +68,9 @@ static CGFloat maxRotationAngle = M_PI / 18.0f;
             CGFloat positionRatio = (location.x - self.originalPositionX) / CGRectGetWidth(self.originalFrame);
             CGFloat distanceOffsetRatio = (recognizer.view.center.y - self.originalPositionY) / (CGRectGetHeight(self.superview.frame) - self.originalPositionY);
             angle = positionRatio * distanceOffsetRatio * maxRotationAngle;
+            self.backImageView.alpha = self.originalBkViewAlpha * (1 - distanceOffsetRatio);
         }
         recognizer.view.transform = CGAffineTransformMakeRotation(angle);
-        self.totalAngle = angle;
     }
     [recognizer setTranslation:CGPointMake(0, 0) inView:self.superview];
     
@@ -129,8 +130,8 @@ static CGFloat maxRotationAngle = M_PI / 18.0f;
         [UIView animateWithDuration:0.6 delay:0.0f usingSpringWithDamping:0.6f initialSpringVelocity:0 options:UIViewAnimationOptionCurveLinear animations:^{
             blockSelf.transform = CGAffineTransformIdentity;
             blockSelf.frame = blockSelf.originalFrame;
+            blockSelf.backImageView.alpha = blockSelf.originalBkViewAlpha;
         } completion:^(BOOL finished){
-            self.totalAngle = 0;
             self.autoresizingMask = NO;
         }];
     } else {

@@ -13,7 +13,6 @@
 @interface YQLoginCardView : YQCardBaseView
 
 @property (nonatomic, weak) id<YQLoginCardViewDelegate> delegate;
-@property (nonatomic, copy) dispatch_block_t topButtonActionBlock;
 @property (nonatomic, copy) dispatch_block_t leftButtonActionBlock;
 @property (nonatomic, copy) dispatch_block_t rightButtonActionBlock;
 - (void)showView;
