@@ -35,8 +35,7 @@
     showButton.titleLabel.font = [UIFont systemFontOfSize:16.0f];
     showButton.titleLabel.textColor = [UIColor brownColor];
     [showButton addTarget:self action:@selector(showAction) forControlEvents:UIControlEventTouchUpInside];
-    self.showButton = showButton;
-    [self.view addSubview:self.showButton];
+    [self.view addSubview:showButton];
     self.title = @"animation card view";
 }
 
