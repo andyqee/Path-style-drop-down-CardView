@@ -13,8 +13,8 @@ YQCardView mainly based on Core Animaiton Framework and UIView animation functio
 
 How to use it 
 ---------------------
-```sh
 that's so easy
+```sh
 YQLoginCardView *cardView = [YQLoginCardView alloc] init;
 [cardView showView];
 
