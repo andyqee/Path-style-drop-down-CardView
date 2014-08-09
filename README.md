@@ -22,3 +22,7 @@ YQLoginCardView *cardView = [YQLoginCardView alloc] init;
 
 Effect
 ----------------------
+
+Author
+----------------------
+Yi Qi 
