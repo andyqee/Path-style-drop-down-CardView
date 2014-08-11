@@ -125,8 +125,8 @@ static CGFloat maxRotationAngle = M_PI / 18.0f;
 
 - (void)moveBackToOriginalLoacationWithVelocity:(CGFloat)velocity
 {
+    __weak typeof(self) blockSelf = self;
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
-        __weak typeof(self) blockSelf = self;
         [UIView animateWithDuration:0.6 delay:0.0f usingSpringWithDamping:0.6f initialSpringVelocity:0 options:UIViewAnimationOptionCurveLinear animations:^{
             blockSelf.transform = CGAffineTransformIdentity;
             blockSelf.frame = blockSelf.originalFrame;
@@ -135,7 +135,13 @@ static CGFloat maxRotationAngle = M_PI / 18.0f;
             self.autoresizingMask = NO;
         }];
     } else {
-        
+        [UIView animateWithDuration:0.6 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            blockSelf.transform = CGAffineTransformIdentity;
+            blockSelf.frame = blockSelf.originalFrame;
+            blockSelf.backImageView.alpha = blockSelf.originalBkViewAlpha;
+        } completion:^(BOOL finished){
+            self.autoresizingMask = NO;
+        }];
     }
 }
 

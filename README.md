@@ -25,4 +25,4 @@ Effect
 
 Author
 ----------------------
-Yi Qi 
+Yi Qi (祁溢)
