@@ -106,21 +106,17 @@ static CGFloat maxRotationAngle = M_PI / 18.0f;
 
 - (void)removeOutOfScreenFromCurrentLocation:(CGPoint)location WithVelocity:(CGFloat)velocity
 {
-    CABasicAnimation *animation = [CABasicAnimation animation];
-    animation.keyPath = @"position.y";
-    CGFloat fromValue = location.y;
-    animation.fromValue = @(fromValue);
-    
     CGFloat toValue = CGRectGetHeight(self.frame) / 2 + CGRectGetHeight(self.superview.frame);
     CGFloat duration = (toValue - self.center.y) / velocity;
     duration = MIN(duration, removeAnimationDurationThreshold);
-    animation.duration = duration;
-    animation.toValue = @(toValue);
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-    
-    [self.layer addAnimation:animation forKey:@"remove"];
-    self.isOnScreen = NO;
-    self.layer.position = CGPointMake(location.x, toValue);
+    [UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.layer.position = CGPointMake(CGRectGetMidX(self.frame), toValue);
+    } completion:^(BOOL finished){
+        self.isOnScreen = NO;
+        [super removeFromSuperview];
+        [self.backImageView removeFromSuperview];
+        
+    }];
 }
 
 - (void)moveBackToOriginalLoacationWithVelocity:(CGFloat)velocity
