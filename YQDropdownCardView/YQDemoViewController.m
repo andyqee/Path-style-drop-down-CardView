@@ -31,9 +31,10 @@
     UIButton *showButton = [UIButton buttonWithType:UIButtonTypeCustom];
     showButton.frame = CGRectMake(60, 200, 200, 50);
     showButton.center = self.view.center;
+    showButton.backgroundColor = [UIColor yellowColor];
     [showButton setTitle:@"show card view" forState:UIControlStateNormal];
-    showButton.titleLabel.font = [UIFont systemFontOfSize:16.0f];
-    showButton.titleLabel.textColor = [UIColor brownColor];
+    [showButton setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
+    showButton.titleLabel.font = [UIFont systemFontOfSize:20.0f];
     [showButton addTarget:self action:@selector(showAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:showButton];
     self.title = @"animation card view";
