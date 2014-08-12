@@ -23,7 +23,7 @@ YQLoginCardView *cardView = [YQLoginCardView alloc] init;
 Effect
 ----------------------
 <p align="center">
-    <img src="http://robb.is/img/rbbanimation/cardViewDemo.gif" alt="Demo" title="card interactive animation demo">
+    <img src="https://github.com/andyqee/Path-style-drop-down-CardView/blob/master/cardViewDemo.gif" alt="Demo" title="card interactive animation demo">
 </p>
 
 Author
